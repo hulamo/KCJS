@@ -1,18 +1,17 @@
 
-//separador=""
+/// Programa de Semifinales
+
+/// Importar archivos externos
 
 
-//i=0
-//while (i < 10) {
-    
- //   separador=separador+"="
- //   i++
- // }
-
-// Importar variables.js
-
+// variables
 import { paises,npaises,ngrupos,tgrupo} from './variables.js'
-//console.log(separador)
+
+// Funciones
+
+import { seleccionar, hacerSeleccion, match} from './funciones.js'
+
+/// Comienza 
 
 console.log("========================================")
 console.log("===COMIENZAN LAS FASES ELIMINATORIOAS===")
@@ -21,32 +20,6 @@ console.log(" ")
 console.log(" ")
 
 
-let tpaises = [...paises]
-//let seleccionado=""
-
-
-
-
-function seleccionar(equipos){
-    let seleccionado1 = equipos[Math.floor(Math.random() * equipos.length)];
-    //console.log(seleccionado1)
-    
-   
-    equipos=equipos.filter(function(value, index, arr){ 
-        return value != seleccionado1;
-    });
-    //console.log(seleccionado1)
-//return {equipos: equipos,seleccionado1,seleccionado1}
-return [seleccionado1, equipos]
-
-}
-
-//const {tpaises2,seleccionado} = seleccionar(tpaises)
-
-//let [seleccionado,tpaises] = seleccionar([...paises])
-
-//console.log(tpaises)
-//console.log(seleccionado)
 
 
 // Seleccionar Equipos
@@ -56,17 +29,11 @@ var Grupo_B=[]
 var Grupo_C=[]
 var Grupo_D=[]
 
-let seleccionado=""
-let i=1
-let temp={}
 
-function hacerSeleccion(){
-    temp = seleccionar([...tpaises])
-    //console.log(temp)
-    seleccionado=temp[0]
-    tpaises=[...temp[1]]
-return seleccionado
-}
+let i=1
+
+
+
 
 while (i <=2 ) {
 
@@ -75,14 +42,7 @@ while (i <=2 ) {
     Grupo_B.push(hacerSeleccion())
     Grupo_C.push(hacerSeleccion())
     Grupo_D.push(hacerSeleccion())
-   /*
-    [seleccionado,tpaises] = seleccionar([...tpaises])
-    Grupo_B.push(seleccionado)
-    [seleccionado,tpaises] = seleccionar([...tpaises])
-    Grupo_C.push(seleccionado)
-    let [seleccionado,tpaises] = seleccionar([...tpaises])
-    Grupo_D.push(seleccionado)
-*/
+
   i++
   }
 
@@ -99,25 +59,11 @@ console.log("Grupo_D " ,Grupo_D)
 console.log(" ")
 
 
-let goles=0
+
 let resultado1=0
 let resultado2=0
 let resultados=[]
 
-function match(){
-let seguir =1
-    let rresultado1=0
-let rresultado2=0
-    while (seguir==1){
-
-goles=Math.floor(Math.random() * 6) + 2
-rresultado1=Math.floor(Math.random() * goles)
-rresultado2=goles-resultado1
-
-if (rresultado1 != rresultado2){
-    seguir=0
-}
-}return [rresultado1,rresultado2]}
 
 
 
@@ -288,6 +234,5 @@ console.log ("============================")
 console.log("EL GRAN CAMPEÓN !!! => ",primer )
 console.log ("============================")
 
-//console.log("Resultado1 ", resultado1)
-//console.log("Resultado2 ", resultado2)
+
 
